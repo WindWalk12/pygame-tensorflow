@@ -1,4 +1,5 @@
 import pygame
+import random
 
 pygame.init()
 
@@ -10,7 +11,7 @@ pygame.display.set_caption("Game with Tensorflow")
 blue = (0, 0, 255)
 red = (255, 0, 0)
 
-# Rectangles and their values
+# Controllable rectangle
 center = (375, 275)
 rectX = 375
 rectY = 275
@@ -23,10 +24,18 @@ speed_right = 0.2
 speed_up = -0.2
 speed_down = 0.2
 
+# uncontrollable rectangle
+urectX = random.randint(100, 700)
+urectY = random.randint(25, 575)
+
 
 # Function to draw the controllable rectangle
 def rect(color, x, y):
     pygame.draw.rect(screen, color, (x, y, 50, 50))
+
+
+def urect(color, x, y):
+    pygame.draw.rect(screen, color, (x, y, 100, 25))
 
 
 # Infinite loops the game until closed
@@ -74,8 +83,8 @@ while running:
     # Creates the controllable rectangle
     rect(blue, rectX, rectY)
 
-    # creates the red rectangle
-    rect2 = pygame.draw.rect(screen, red, (100, 300, 100, 25))
+    # Creates the uncontrollable rectangle
+    urect(red, urectX, urectY)
 
     # Updates the screen
     pygame.display.update()
