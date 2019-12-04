@@ -1,16 +1,10 @@
 from classes import *
-import pygame
-import random
 
 pygame.init()
 
 # Creates the screen
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Game with Tensorflow")
-
-# Variables
-blue = (0, 0, 255)
-red = (255, 0, 0)
 
 # Controllable rectangle
 center = (375, 275)
@@ -86,6 +80,10 @@ while running:
 
     # Creates the uncontrollable rectangle
     urect(red, urectX, urectY)
+
+    # Testing class rectangle
+    test = rectangle(red, (100, 400, 50, 50))
+    test.render(screen)
 
     # Updates the screen
     pygame.display.update()
