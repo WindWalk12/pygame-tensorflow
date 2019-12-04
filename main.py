@@ -77,5 +77,5 @@ while running:
     # creates the red rectangle
     rect2 = pygame.draw.rect(screen, red, (100, 300, 100, 25))
 
-    # Updates the screen gg
+    # Updates the screen
     pygame.display.update()
