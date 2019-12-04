@@ -2,12 +2,15 @@
 import pygame
 import random
 
+# Initialise Pygame
+pygame.init()
+
 # Variables
 blue = (0, 0, 255)
 red = (255, 0, 0)
 
 
-# Create rectangles
+# Create rectangles and render them
 class rectangle:
     def __init__(self, color, rect):
         self.color = color

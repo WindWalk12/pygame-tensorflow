@@ -1,7 +1,5 @@
 from classes import *
 
-pygame.init()
-
 # Creates the screen
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Game with Tensorflow")
