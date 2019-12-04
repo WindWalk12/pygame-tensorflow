@@ -1,3 +1,4 @@
+from classes import *
 import pygame
 import random
 
