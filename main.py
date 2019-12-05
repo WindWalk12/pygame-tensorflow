@@ -4,7 +4,7 @@ from classes import *
 screen = pygame.display.set_mode((800, 600))
 pygame.display.set_caption("Game with Tensorflow")
 
-# Controllable rectangle
+# Controllable rectangle variables
 center = (375, 275)
 rectX = 375
 rectY = 275
@@ -19,7 +19,7 @@ speed_right = 0.2
 speed_up = -0.2
 speed_down = 0.2
 
-# uncontrollable rectangle
+# uncontrollable rectangle variables
 urectX = random.randint(100, 700)
 urectY = random.randint(25, 575)
 urectWidth = 100
