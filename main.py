@@ -25,6 +25,9 @@ urectY = random.randint(25, 575)
 urectWidth = 100
 urectHeight = 25
 
+# score
+score = 0
+
 # Infinite loops the game until closed
 running = True
 while running:
@@ -66,6 +69,14 @@ while running:
         rectY_change = 0
     elif rectY >= 550:
         rectY_change = 0
+
+    # Collision detection
+    if urectX <= rectX <= urectX + urectWidth or urectX <= rectX + rectWidth <= urectX + urectWidth:
+        if urectY <= rectY <= urectY + urectHeight or urectY <= rectY + rectHeight <= urectY + urectHeight:
+            urectX = random.randint(100, 700)
+            urectY = random.randint(25, 575)
+            score += 1
+            print(score)
 
     # Creates the controllable rectangle
     rect = rectangle(blue, (rectX, rectY, rectWidth, rectHeight))
