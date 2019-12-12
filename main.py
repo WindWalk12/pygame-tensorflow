@@ -23,10 +23,19 @@ speed_down = 0.2
 urectX = random.randint(100, 700)
 urectY = random.randint(25, 575)
 urectWidth = 100
-urectHeight = 25
+urectHeight = 50
 
 # score
-score = 0
+scoreValue = 0
+textX = 10
+textY = 10
+font = pygame.font.Font('freesansbold.ttf', 32)
+
+
+def showScore(x, y):
+    score = font.render("Score: " + str(scoreValue), True, (255, 255, 255))
+    screen.blit(score, (x, y))
+
 
 # Infinite loops the game until closed
 running = True
@@ -75,8 +84,7 @@ while running:
         if urectY <= rectY <= urectY + urectHeight or urectY <= rectY + rectHeight <= urectY + urectHeight:
             urectX = random.randint(100, 700)
             urectY = random.randint(25, 575)
-            score += 1
-            print(score)
+            scoreValue += 1
 
     # Creates the controllable rectangle
     rect = rectangle(blue, (rectX, rectY, rectWidth, rectHeight))
@@ -85,6 +93,9 @@ while running:
     # Creates the uncontrollable rectangle
     urect = rectangle(red, (urectX, urectY, urectWidth, urectHeight))
     urect.render(screen)
+
+    # Shows the score
+    showScore(textX, textY)
 
     # Updates the screen
     pygame.display.update()
