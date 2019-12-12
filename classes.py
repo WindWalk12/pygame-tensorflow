@@ -1,6 +1,7 @@
 # This file is dedicated to classes
 import pygame
 import random
+import tensorflow as tf
 
 # Initialise Pygame
 pygame.init()
